@@ -27,12 +27,9 @@ public class Q4 {
         do {
             System.out.println("Enter the gem length: ");
             gemLength = sc.nextInt();
-            if (gemLength < 1 || gemLength > word.length()) {
+            if (gemLength < 1 || gemLength > word.length())
                 System.out.println("Gem length must be between 1 and " + word.length());
-            } else {
-                break;
-            }
-        } while (true);
+        } while (gemLength < 1 || gemLength > word.length());
 
 
         for(int i = 0; i < word.length(); i++){
