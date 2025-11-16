@@ -43,11 +43,11 @@ public class Q6 {
                 continue;
             }
 
-            String result = "";
+            int result = 0;
             boolean invalid = false;
             for(int j = 0; j < log.length(); j++){
                 if(Character.isLetter(log.charAt(j)))
-                    result += log.charAt(j);
+                    result ++;
                 else if(Character.isDigit(log.charAt(j))){
                     if (log.charAt(j) == '1' || log.charAt(j) == '0') {
                         invalid = true;
@@ -57,8 +57,7 @@ public class Q6 {
                             break;
                         } else {
                             int count = log.charAt(j) - '0';
-                            for(int k = 1; k < count; k++)
-                                result += log.charAt(j-1);
+                            result += count-1;
                         }
                     }
                 }
@@ -66,10 +65,10 @@ public class Q6 {
 
             if(invalid)
                 System.out.println("Invalid Log");
-            else if(result.length() > resultLength)
+            else if(result > resultLength)
                 System.out.println("Your decompressed log has exceed 200 characters");
             else
-                System.out.println(result.length());
+                System.out.println(result);
         }
     }
 }
